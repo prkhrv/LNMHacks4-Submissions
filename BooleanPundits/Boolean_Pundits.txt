@@ -1,0 +1,21 @@
+Farmerly !! A Farmer's friend, Farmerly is an IOT based Solution Which Includes a mobile App to manage and control the Device which sends the signal through the server Hosted on Azure
+and the device sends the live stats to the app via Sockets !! so the Farmer is constantly updated about the live Stats.
+Apart from moisture based smart irrigation it also supports intruder detection of the Farm by the Animals Running in Wild !
+
+
+How to use??
+
+Go to Server Directory
+run `npm install`
+then `node index`
+
+use pm2 start index.js (For Production)
+
+
+for App:
+`flutter run` 
+
+
+
+
+--Team Boolean_Pundits
