@@ -1,27 +1,35 @@
-# LNMHacks 4.0 - 19th and 20th October, 2019
- 
-## Submission Procedure
-Read the following steps and guidelines properly for proper submission of your project. Missing out any step or performing it wrongly can lead to unsuccessful submission. 
-
-### Step 1
-#### Fork this repository
-
-### Step 2
-#### Create a New Folder within the forked repository, with the 'folder name' being your 'team name'
-
-## Contents of the folder
-+ The project directory.
-+ The presentation that you will be presenting while presenting your project before the judges.
-+ A text file that contains proper documentation. The documentation should contain:
-    - A description of your project.
-    - The contents of your project directory.
-    - Ways to host your project on the localhost.
-+ The name of the 'pptx' and 'text' files should also be the 'team name'.
-
-### People with only hardware solution are required to submit only the 'pptx' and 'text' files. A link to the video demonstration of your working model should also be included in both the files.
+# Farmerly
+Farmerly !! A Farmer's friend, Farmerly is an IOT based Solution Which Includes a mobile App to manage and control the Device which sends the signal through the server Hosted on Azure
+and the device sends the live stats to the app via Sockets !! so the Farmer is constantly updated about the live Stats.
+Apart from moisture based smart irrigation it also supports intruder detection of the Farm by the Animals Running in Wild !
 
 
-### Step 3
-Create a Pull Request only after you have completed the entire project and do not wish to make any further changes. We will not be accepting more than one Pull Request from any team. \
-\
-You can complete your work on the local machine and then upload your project folder in the forked repository and proceed to create a Pull Request.
+How to use??
+
+Go to Server Directory
+run `npm install`
+then `node index`
+
+## Hosted With Azure VM
+![Server](https://prkhrv.github.io/lnmhacks/Screenshots/app5.png)
+
+use pm2 start index.js (For Production)
+
+
+## Live Data via Sockets
+![Data](https://prkhrv.github.io/lnmhacks/Screenshots/app4.png)
+
+
+for App:
+`flutter run` 
+
+## App ScreenShots
+![App Home](https://prkhrv.github.io/lnmhacks/Screenshots/app1.jpg)
+![App Image](https://prkhrv.github.io/lnmhacks/Screenshots/app2.jpg)
+![App Connect](https://prkhrv.github.io/lnmhacks/Screenshots/app3.jpg)
+
+
+Video Link:-https://photos.app.goo.gl/uf46xrE4WNwD3cLz6
+
+--Team Boolean_Pundits
+
