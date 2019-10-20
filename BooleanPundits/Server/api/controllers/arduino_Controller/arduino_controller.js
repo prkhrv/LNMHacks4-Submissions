@@ -2,9 +2,12 @@ var five = require('johnny-five');
 
 var controller = process.argv[2] || "GP2D120XJ00F";
 
+var socket = require('socket.io');
+
 
 
 exports.turn_on_arduino = function(req,res,next){
+  var io = req.app.get('io');
     //Arduino
 const board = new five.Board();
 
@@ -20,6 +23,8 @@ board.on("ready", function() {
     });
     var relay = new five.Relay(5);
     sensor.scale(0, 100).on("change", function() {
+
+      io.emit('moisture',{moisture:this.value});
         console.log(this.value);
          // 0 - Wet
             // 50 - Dry
@@ -34,9 +39,10 @@ board.on("ready", function() {
     });
     var proximity_relay = new five.Relay(6);
         proximity.on("data", function() {
+          io.emit('proximity',{inches:this.inches,cm:this.cm});
           console.log("inches: ", this.inches);
           console.log("cm: ", this.cm);
-          if(this.cm > 3){
+          if(this.cm > 4){
               proximity_relay.on();
           }else{
               proximity_relay.off();

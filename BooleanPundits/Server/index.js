@@ -5,7 +5,7 @@ var app = express();
 var port = 3000 || process.env.PORT;
 var bodyParser = require('body-parser');
 var mongoose = require('mongoose');
-
+var io = require('socket.io').listen(app.listen(port));
 
 
 
@@ -28,6 +28,24 @@ mongoose.connect(dbConfig.url, {
     process.exit();
 });
 
+// Socket
+var clients = 0;
+io.on('connection',function(socket){
+    clients = clients+1;
+    console.log("client Connected");
+    console.log("Online Users "+clients);
+
+    socket.on('disconnect',function(){
+        clients = clients-1;
+        console.log("Client Gone");
+        console.log("Online Users "+clients);
+
+    })
+});
+
+
+//io
+app.set('io', io);
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -43,11 +61,4 @@ const routes = require('./api/routes/router');
 app.use('/',routes);
 
 
-app.listen(port,function(err){
-    if(err){
-        res.send(err);
-    }else{
-        console.log("Server running on "+port);
-    }
-
-});
+console.log("socket server started on "+port);
